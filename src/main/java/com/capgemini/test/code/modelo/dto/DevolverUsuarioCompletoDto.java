@@ -12,8 +12,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CrearUsuarioDto {
+public class DevolverUsuarioCompletoDto {
 
+    private Long id;
     @NotBlank
     @Size(max = 6)
     private String name;
