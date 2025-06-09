@@ -1,4 +1,4 @@
-package com.capgemini.test.code.feignclient.clients.mensaje_rol;
+package com.capgemini.test.code.feignclient.mensaje_rol;
 
 
 import lombok.AllArgsConstructor;

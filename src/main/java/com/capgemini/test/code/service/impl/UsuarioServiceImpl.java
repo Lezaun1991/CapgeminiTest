@@ -3,9 +3,10 @@ package com.capgemini.test.code.service.impl;
 import com.capgemini.test.code.feignclient.clients.CheckDniRequest;
 import com.capgemini.test.code.feignclient.clients.CheckDniResponse;
 import com.capgemini.test.code.feignclient.clients.DniClient;
-import com.capgemini.test.code.feignclient.clients.mensaje_rol.CheckEmailRequest;
-import com.capgemini.test.code.feignclient.clients.mensaje_rol.CheckSmsRequest;
-import com.capgemini.test.code.feignclient.clients.mensaje_rol.RolClient;
+
+import com.capgemini.test.code.feignclient.mensaje_rol.CheckEmailRequest;
+import com.capgemini.test.code.feignclient.mensaje_rol.CheckSmsRequest;
+import com.capgemini.test.code.feignclient.mensaje_rol.RolClient;
 import com.capgemini.test.code.modelo.dto.CrearUsuarioDto;
 import com.capgemini.test.code.modelo.dto.DevolverUsuarioCompletoDto;
 import com.capgemini.test.code.modelo.dto.DevolverUsuarioIdDto;
@@ -46,21 +47,15 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     @Transactional
     public DevolverUsuarioIdDto guardarUsuario(CrearUsuarioDto crearUsuarioDto) {
-
         validarDni(crearUsuarioDto.getDni());
-
         Usuario usuarioNuevo = convertirDtoAEntidad(crearUsuarioDto);
-
         validarEmailDuplicado(usuarioNuevo.getEmail());
-
         asignarRoom(usuarioNuevo);
-
         usuarioRepository.save(usuarioNuevo);
-
         mandarMensajeSegunRol(usuarioNuevo);
-
         return mapperUsuario.toDtoSoloID(usuarioNuevo);
     }
+
 
     @Override
     public DevolverUsuarioCompletoDto devolverUsuario(Long id) {
@@ -71,6 +66,8 @@ public class UsuarioServiceImpl implements UsuarioService {
         return mapperUsuario.toDto(usuarioEncontrado);
 
     }
+
+
 
     private void validarDni(String dni){
         try{
