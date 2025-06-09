@@ -1,4 +1,4 @@
-package com.capgemini.test.code.clients;
+package com.capgemini.test.code.feignclient.clients;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Bean;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import feign.Logger;
 import feign.okhttp.OkHttpClient;
  
-@FeignClient(name = "checkDniClient", url = "${external.service.url}", configuration = com.capgemini.test.code.clients.DniClient.FeignConfig.class)
+@FeignClient(name = "checkDniClient", url = "${external.service.url}", configuration = DniClient.FeignConfig.class)
 public interface DniClient {
   @Configuration
   public class FeignConfig {

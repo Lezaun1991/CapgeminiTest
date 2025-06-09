@@ -1,4 +1,5 @@
-package com.capgemini.test.code.clients;
+package com.capgemini.test.code.feignclient.clients.mensaje_rol;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +10,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CheckDniResponse {
-  private String message;
+public class CheckRolResponse {
+    private String message;
 }

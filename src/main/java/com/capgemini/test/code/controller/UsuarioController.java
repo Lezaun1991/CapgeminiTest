@@ -25,8 +25,10 @@ public class UsuarioController {
     @PostMapping
     public ResponseEntity<DevolverUsuarioIdDto> crearUsuario(@Validated @RequestBody CrearUsuarioDto crearUsuarioDto,
                                                              BindingResult estado){
+        System.out.println("AQUI LLEGA fuera");
        if(estado.hasErrors()) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
        try{
+           System.out.println("AQUI LLEGA dentro");
            return ResponseEntity.ok(usuarioService.guardarUsuario(crearUsuarioDto));
        }
        catch (DataAccessException e){
