@@ -13,7 +13,6 @@ import com.capgemini.test.code.modelo.entity.Room;
 import com.capgemini.test.code.modelo.entity.Usuario;
 import com.capgemini.test.code.modelo.repository.RoomRepository;
 import com.capgemini.test.code.modelo.repository.UsuarioRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

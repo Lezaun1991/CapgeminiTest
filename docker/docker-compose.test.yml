@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  postgres-test:
+    image: postgres:latest
+    container_name: postgres-test
+    environment:
+      POSTGRES_DB: capgemini_test
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: testpass
+    ports:
+      - "5433:5432"
+    networks:
+      - test-net
+    restart: unless-stopped
+
+networks:
+  test-net:
+    driver: bridge
